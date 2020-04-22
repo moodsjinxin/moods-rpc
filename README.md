@@ -9,6 +9,10 @@
 
 - loadblancer demo
   - HashLoadblancer
+  - LeastActiveLoadBalancer
+  - RandomLoadBalancer
+  - RoundRobinLoadBalancer
+- registry (Zookeeper)  demo
 
 ### 项目进展
 

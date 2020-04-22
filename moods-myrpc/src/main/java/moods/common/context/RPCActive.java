@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RPCActive {
+
+    //用ConcurrentHashMap来管理相应请求的活跃度
     private static final Map<String, Integer> ACTIVE_MAP = new ConcurrentHashMap<>();
 
     public synchronized static int getCount(String interfacename,String methodname,String address){
