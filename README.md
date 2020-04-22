@@ -7,7 +7,12 @@
 
 ### 项目架构
 
-待描述
+- loadblancer demo
+  - HashLoadblancer
+
+### 项目进展
+
+- hashloadblancer （使用FNV1_32_HASH 算法） demo完成
 
 ### 项目使用
 

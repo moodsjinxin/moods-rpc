@@ -1,6 +1,8 @@
 package moods.common;
 
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -8,6 +10,7 @@ import java.util.Arrays;
  * rpc请求
  *
  **/
+@Data
 public class RPCRequest implements Serializable {
     private static final long serialVersionUID = 1L;
     private String requestId;
