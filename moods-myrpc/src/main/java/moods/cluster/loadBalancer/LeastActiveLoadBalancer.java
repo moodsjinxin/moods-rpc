@@ -2,7 +2,7 @@ package moods.cluster.loadBalancer;
 
 import moods.cluster.LoadBalancer;
 import moods.common.RPCRequest;
-import moods.common.context.RPCActive;
+import moods.common.context.RPCactivecount;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class LeastActiveLoadBalancer implements LoadBalancer {
             String enpoint = null;
             int least = 0;
             for(String addres : endPoints){
-                int count  = RPCActive.getCount(request.getInterfaceName(),request.getMethodName(),addres);
+                int count  = RPCactivecount.getcount(request.getInterfaceName(),request.getMethodName(),addres);
                 if(enpoint == null || count<least){
                     enpoint = addres;
                     least = count;

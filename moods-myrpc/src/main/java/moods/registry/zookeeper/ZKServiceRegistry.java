@@ -32,8 +32,10 @@ public class ZKServiceRegistry implements ServiceRegistry {
 
     private void connectServer(String registryAddress){
         try {
-            //用CountDownLatch实现同步锁
+            //用CountDownLatch来阻塞主线程，因为ZOOKEEPER的创建是异步的
             CountDownLatch latch = new CountDownLatch(1);
+
+            //异步实例化Zookeeper，并用watchEvent的状态来判断是否成功创建Zookeeper
             zooKeeper = new ZooKeeper(registryAddress,ZKtools.ZK_SESSION_TIMEOUT,watchedEvent -> {
                 /**WATCHER invent
                  * 如果成功连接
