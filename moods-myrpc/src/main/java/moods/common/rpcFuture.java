@@ -1,11 +1,13 @@
 package moods.common;
 
+import lombok.Data;
 import moods.transport.netty.client.rpcClient;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
+@Data
 public class rpcFuture implements Future<Object> {
 
     private rpcClient client;
